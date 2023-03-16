@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd5e909a-98a5-4cf8-aded-0614f1d22cc2" name="变更" comment="" />
+    <list default="true" id="cd5e909a-98a5-4cf8-aded-0614f1d22cc2" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementProject/src/main/java/com/yizhi/student/controller/StudentInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementProject/src/main/java/com/yizhi/student/controller/StudentInfoController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -31,6 +37,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2N51uRcvAhsGAXODtTxiUhvXRu5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,7 +95,8 @@
       <updated>1678939357097</updated>
       <workItem from="1678939359180" duration="319000" />
       <workItem from="1678939691006" duration="5589000" />
-      <workItem from="1678951750999" duration="18003000" />
+      <workItem from="1678951750999" duration="18662000" />
+      <workItem from="1678973760440" duration="425000" />
     </task>
     <servers />
   </component>

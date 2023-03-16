@@ -87,6 +87,9 @@ public class StudentInfoController {
 	@PostMapping("/update")
 	@RequiresPermissions("student:studentInfo:edit")
 	public R update(StudentInfoDO studentInfo){
+		Date date=new Date();
+		Timestamp editTime=new Timestamp(date.getTime());
+		studentInfo.setEditTime(editTime);
 		studentInfoService.update(studentInfo);
 		return new R();
 	}
