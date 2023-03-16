@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yizhi.student.dao.StudentInfoDao">
+
+    <insert id="save" parameterType="com.yizhi.student.domain.StudentInfoDO">
+        insert into s_student_info
+            (student_id,exam_id,class_id,student_name,certify,
+             mail_address,foreign_lanaguage,student_sex,nation,
+             political,card_id,telephone,subject_type,tocollege,
+             tomajor,birthplace,grade,isstate,birthday,
+             note,add_time,add_userid,edit_time,edit_userid
+        )
+        values(
+        #{studentId},
+        #{examId},
+        #{classId}, #{studentName}, #{certify}, #{mailAddress},
+        #{foreignLanaguage}, #{studentSex}, #{nation}, #{political},
+        #{cardId}, #{telephone}, #{subjectType}, #{tocollege},
+        #{tomajor}, #{birthplace}, #{grade}, #{isstate}, #{birthday}, #{note},#{addTime}, #{addUserid},  #{editTime},#{editUserid}
+            )
+    </insert>
+    <select id="list" resultType="com.yizhi.student.domain.StudentInfoDO">
+        select
+        id,student_id,exam_id,class_id,student_name,certify,mail_address,foreign_lanaguage
+        ,student_sex,nation,political,card_id,telephone,subject_type
+        from s_student_info
+    <if test="begin != null and size != null">
+            limit #{begin}, #{size}
+        </if>
+    </select>
+    <select id="count" resultType="int">
+        select count(*) from s_student_info
+        <where>
+            id!=0
+            <if test="id != null and id != ''"> and id = #{id} </if>
+            <if test="studentId != null and studentId != ''"> and student_id = #{studentId} </if>
+            <if test="examId != null and examId != ''"> and exam_id = #{examId} </if>
+            <if test="classId != null and classId != ''"> and class_id = #{classId} </if>
+            <if test="studentName != null and studentName != ''"> and student_name = #{studentName} </if>
+            <if test="certify != null and certify != ''"> and certify = #{certify} </if>
+            <if test="mailAddress != null and mailAddress != ''"> and mail_address = #{mailAddress} </if>
+            <if test="foreignLanaguage != null and foreignLanaguage != ''"> and foreign_lanaguage = #{foreignLanaguage} </if>
+            <if test="studentSex != null and studentSex != ''"> and student_sex = #{studentSex} </if>
+            <if test="nation != null and nation != ''"> and nation = #{nation} </if>
+            <if test="political != null and political != ''"> and political = #{political} </if>
+            <if test="cardId != null and cardId != ''"> and card_id = #{cardId} </if>
+            <if test="telephone != null and telephone != ''"> and telephone = #{telephone} </if>
+            <if test="subjectType != null and subjectType != ''"> and subject_type = #{subjectType} </if>
+        </where>
+    </select>
+    <delete id="remove" parameterType="int">
+        delete from s_student_info where id=#{id}
+    </delete>
+    <select id="get" resultType="com.yizhi.student.domain.StudentInfoDO">
+#         id,student_id,exam_id,class_id,student_name,certify,mail_address,
+#         foreign_lanaguage,student_sex,nation,political,card_id,telephone,subject_type
+        select * from s_student_info
+            <where>
+                id=#{id}
+            </where>
+    </select>
+    <update id="update" parameterType="com.yizhi.student.domain.StudentInfoDO">
+        update s_student_info set student_id=#{studentId},exam_id=#{examId},class_id=#{classId},student_name=#{studentName},
+                                  certify=#{certify},mail_address=#{mailAddress},foreign_lanaguage=#{foreignLanaguage},
+                                  student_sex=#{studentSex},nation=#{nation},political=#{political},
+                                  card_id =#{cardId},telephone=#{telephone},subject_type=#{subjectType},tocollege=#{tocollege},
+                                  tomajor=#{tomajor},birthplace=#{birthday},grade=#{grade},isstate=#{isstate},birthday=#{birthday},
+                                  note=#{note}
+             <where>
+                 id=#{id}
+             </where>
+    </update>
+    <delete id="batchRemove" parameterType="java.lang.Integer">
+        delete from s_student_info where id in
+            <foreach collection="array" item="id" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+    </delete>
+</mapper>
