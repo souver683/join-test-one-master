@@ -32,11 +32,15 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 	public List<StudentInfoDO> list(Map<String, Object> map){
 		 String currPage1 = (String) map.get("currPage");
 		String pageSize1 = (String)map.get("pageSize");
+		String name = (String)map.get("name");
+		String tocollegeId = (String)map.get("tocollegeId");
+		String tomajorId = (String)map.get("tomajorId");
+		String classId = (String)map.get("classId");
 		int currPage= Integer.parseInt(currPage1);
 		int pageSize = Integer.parseInt(pageSize1);
 		int begin=(currPage-1)*pageSize;
 		int size=pageSize;
-		List<StudentInfoDO> students = studentInfoDao.list(begin,size);
+		List<StudentInfoDO> students = studentInfoDao.list(begin,size,name,tocollegeId,tomajorId,classId);
 		return students;
 	}
 

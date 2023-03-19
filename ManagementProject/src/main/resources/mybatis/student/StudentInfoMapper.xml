@@ -25,6 +25,12 @@
         id,student_id,exam_id,class_id,student_name,certify,mail_address,foreign_lanaguage
         ,student_sex,nation,political,card_id,telephone,subject_type
         from s_student_info
+            <where>
+                <if test="name!=null and name!=''"> and student_name like #{name } </if>
+                <if test="tocollegeId!=null and tocollegeId!=''"> and tocollege = #{tocollegeId} </if>
+                <if test="tomajorId!=null and tomajorId!=''"> and tomajor = #{tomajorId} </if>
+                <if test="classId!=null and classId!=''"> and class_id = #{classId} </if>
+            </where>
     <if test="begin != null and size != null">
             limit #{begin}, #{size}
         </if>

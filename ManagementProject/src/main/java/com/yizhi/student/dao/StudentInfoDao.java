@@ -19,7 +19,7 @@ public interface StudentInfoDao {
 
 	StudentInfoDO get(Integer id);
 
-	List<StudentInfoDO> list(int begin,int size);
+	List<StudentInfoDO> list(int begin,int size,String name,String tocollegeId,String tomajorId,String classId);
 
 	int count(Map<String,Object> map);
 
